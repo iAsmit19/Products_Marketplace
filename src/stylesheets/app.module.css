@@ -1,0 +1,6 @@
+@import url(./index.module.css);
+
+.mainContainer {
+  min-height: 100vh;
+  width: 100%;
+}

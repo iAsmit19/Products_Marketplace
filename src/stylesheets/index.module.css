@@ -1,0 +1,46 @@
+@font-face {
+  font-family: "SF Pro";
+  src: url(../fonts/sf-pro/sf-pro-display_regular.ttf);
+}
+
+@font-face {
+  font-family: "SF Pro Bold";
+  src: url(../fonts/sf-pro/sf-pro-text_bold.ttf);
+}
+
+:root {
+  /* Global */
+  --global-bg: #ffffff;
+  --global-font: #000;
+
+  /* Scrollbar */
+  --scrollbar-bg: #ffffff;
+  --scrollbar-thumb: #242424;
+
+  /* Navbar */
+  --navbar-bg: #e0e0e0;
+  --navbar-font: #2b2b2b;
+  --navbar-font-hover: #ff0000;
+  --navbar-font-active: #0085a7;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  /* background-color: var(--global-bg); */
+  color: var(--global-font);
+  font-family: 'SF Pro';
+}
+::-webkit-scrollbar {
+  background-color: var(--scrollbar-bg);
+  height: 10px;
+  width: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb);
+}
