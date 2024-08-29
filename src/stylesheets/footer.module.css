@@ -1,0 +1,12 @@
+@import url(./index.module.css);
+
+.footer {
+  background-color: black;
+  color: white;
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "SF Pro";
+}

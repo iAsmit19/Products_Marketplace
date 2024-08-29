@@ -38,6 +38,10 @@
 
 .navLinks {
   color: var(--navbar-font);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
   font-size: 15px;
   font-family: "SF Pro Bold";
   text-decoration: none;

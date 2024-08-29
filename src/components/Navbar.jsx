@@ -9,8 +9,11 @@ import {
 import marketplace from "/src/assets/logo-icon/marketplace-full.svg";
 import { IconContext } from "react-icons";
 import { PiShoppingCartSimpleLight } from "react-icons/pi";
+import { DataContext } from "../utils/Context";
+import { useContext } from "react";
 
 const Navbar = () => {
+  const { productsInCart } = useContext(DataContext);
   return (
     <div className={navbar}>
       <div className={navbarContainer}>
@@ -49,6 +52,7 @@ const Navbar = () => {
               to={"/cart"}
             >
               <PiShoppingCartSimpleLight />
+              <p>{productsInCart}</p>
             </NavLink>
           </IconContext.Provider>
         </div>

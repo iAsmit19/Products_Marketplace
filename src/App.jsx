@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import { mainContainer } from "./stylesheets/app.module.css";
 import Home from "./components/Home";
 import Cart from "./components/Cart";
+import Footer from "./components/Footer";
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/cart" element={<Cart />} />
       </Routes>
+      <Footer />
     </div>
   );
 };

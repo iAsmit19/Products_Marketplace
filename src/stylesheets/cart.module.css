@@ -1,9 +1,23 @@
 @import url(./index.module.css);
 
 .cartContainer {
-  min-height: calc(100vh - 10vh);
-  width: 100%;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 15vh;
+}
+
+.cartProductShowcase {
+  height: 100%;
+  width: fit-content;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 30px;
+  grid-template-areas:
+    ". . ."
+    ". . ."
+    ". . .";
+  grid-auto-flow: row dense;
 }
