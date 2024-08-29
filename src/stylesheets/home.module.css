@@ -3,7 +3,107 @@
 .homeContainer {
   min-height: calc(100vh - 10vh);
   width: 100%;
+  margin-top: 7vh;
+  padding: 5vh 10vw;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.productShowcase {
+  width: fit-content;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 30px;
+  grid-template-areas:
+    ". . ."
+    ". . ."
+    ". . .";
+  grid-auto-flow: row dense;
+}
+
+.productCard {
+  /* border: 1px solid black; */
+  border-radius: 8px;
+  background-color: var(--product-card-bg);
+  height: 300px;
+  min-width: 300px;
+  max-width: 380px;
+  box-shadow: 0px 0px 10px 0px rgba(226, 226, 226, 0.664);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5%;
+  font-family: "SF Pro";
+  overflow: hidden;
+}
+
+.productImage {
+  /* background-color: blue; */
+  height: 40%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  object-fit: contain;
+}
+
+.productImage img {
+  height: 100%;
+  width: auto;
+  user-select: none;
+}
+
+.productContent {
+  height: 60%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+
+.productTitle {
+  /* border: 1px solid black; */
+  color: #616060;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.productRating {
+  height: auto;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  width: fit-content;
+}
+.productRating span {
+  font-weight: bold;
+}
+
+.productMarket {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.productPrice {
+  width: fit-content;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.productAddCartBtn {
+  border: 1px solid rgb(226, 226, 226);
+  border-radius: 4px;
+  background-color: rgba(226, 226, 226, 0.781);
+  box-shadow: 0px 0px 10px 0px rgb(226, 226, 226);
+  padding: 5px 10px;
+  cursor: pointer;
 }

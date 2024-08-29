@@ -18,10 +18,14 @@
   --scrollbar-thumb: #242424;
 
   /* Navbar */
-  --navbar-bg: #e0e0e0;
+  --navbar-bg: #fafafac4;
   --navbar-font: #2b2b2b;
   --navbar-font-hover: #ff0000;
   --navbar-font-active: #0085a7;
+
+  /* Product Card */
+  --product-card-bg: #f1f1f150;
+
 }
 
 * {
