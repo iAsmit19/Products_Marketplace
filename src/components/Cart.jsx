@@ -15,6 +15,7 @@ import {
   productPrice,
 } from "../stylesheets/home.module.css";
 import { DataContext } from "../utils/Context";
+import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
   const { cartProducts } = useContext(DataContext);
@@ -23,6 +24,11 @@ const Cart = () => {
     const total = cartProducts.reduce((acc, product) => acc + product.price, 0);
     setCartTotal(total);
   }, [cartProducts]);
+
+  const navigator = useNavigate();
+  const handleContinueClick = () => {
+    navigator("/");
+  };
   return (
     <div key={cartProducts.id} className={cartContainer}>
       {cartProducts.length === 0 ? (
@@ -50,7 +56,7 @@ const Cart = () => {
               <h2>${cartTotal.toFixed(2)}</h2>
             </div>
             <div className={cartButtons}>
-              <button id={cartContinueButton}>Continue Shopping</button>
+              <button id={cartContinueButton} onClick={handleContinueClick}>Continue Shopping</button>
               <button>Checkout</button>
             </div>
           </div>
