@@ -1,10 +1,13 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import {
   cartContainer,
   cartProductShowcase,
+  cartProductCard,
+  productCheckout,
+  cartButtons,
+  cartContinueButton,
 } from "../stylesheets/cart.module.css";
 import {
-  productCard,
   productImage,
   productContent,
   productTitle,
@@ -15,41 +18,43 @@ import { DataContext } from "../utils/Context";
 
 const Cart = () => {
   const { cartProducts } = useContext(DataContext);
+  const [cartTotal, setCartTotal] = useState(0);
+  useEffect(() => {
+    const total = cartProducts.reduce((acc, product) => acc + product.price, 0);
+    setCartTotal(total);
+  }, [cartProducts]);
   return (
-    //   <div className={cartProductShowcase}>
-    //     {cartProducts.map(({ id, title, price, image }) => (
-    //       <div className={productCard} key={id}>
-    //         <div className={productImage}>
-    //           <img src={image} alt="" draggable="false" />
-    //         </div>
-    //         <div className={productContent}>
-    //           <h2 className={productTitle}>{title}</h2>
-    //           <div className={productMarket}>
-    //             <p className={productPrice}>${price}</p>
-    //           </div>
-    //         </div>
-    //       </div>
-    //     ))}
-    //   </div>
-    <div className={cartContainer}>
+    <div key={cartProducts.id} className={cartContainer}>
       {cartProducts.length === 0 ? (
-        <p>Your cart is empty</p>
+        <h2>Your cart is empty</h2>
       ) : (
-        <div className={cartProductShowcase}>
-          {cartProducts.map(({ id, title, price, image }) => (
-            <div className={productCard} key={id}>
-              <div className={productImage}>
-                <img src={image} alt="" draggable="false" />
-              </div>
-              <div className={productContent}>
-                <h2 className={productTitle}>{title}</h2>
-                <div className={productMarket}>
-                  <p className={productPrice}>${price}</p>
+        <>
+          <div className={cartProductShowcase}>
+            {cartProducts.map(({ id, title, price, image }) => (
+              <div className={cartProductCard} key={id}>
+                <div className={productImage}>
+                  <img src={image} alt="" draggable="false" />
+                </div>
+                <div className={productContent}>
+                  <h2 className={productTitle}>{title}</h2>
+                  <div className={productMarket}>
+                    <p className={productPrice}>${price}</p>
+                  </div>
                 </div>
               </div>
+            ))}
+          </div>
+          <div className={productCheckout}>
+            <div className={cartTotal}>
+              <h4>Your total : </h4>
+              <h2>${cartTotal.toFixed(2)}</h2>
             </div>
-          ))}
-        </div>
+            <div className={cartButtons}>
+              <button id={cartContinueButton}>Continue Shopping</button>
+              <button>Checkout</button>
+            </div>
+          </div>
+        </>
       )}
     </div>
   );

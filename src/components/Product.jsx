@@ -62,7 +62,10 @@ const Product = ({ productData }) => {
               {cartButton ? (
                 <PiShoppingCartSimpleLight />
               ) : (
-                <PiShoppingCartSimpleFill />
+                <>
+                  <p>Added to Cart</p>
+                  <PiShoppingCartSimpleFill />
+                </>
               )}
             </button>
           </IconContext.Provider>
